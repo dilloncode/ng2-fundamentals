@@ -1,12 +1,15 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
-import { DebugElement, } from '@angular/core';
+import { DebugElement, Component, NO_ERRORS_SCHEMA } from '@angular/core';
 import { SessionListComponent } from './session-list.component';
 import { AuthService } from '../../user/auth.service';
 import { VoterService } from './voter.service';
 import { ISession } from '../shared/event.model';
 import { By } from '@angular/platform-browser';
-import { UpvoteComponent, DurationPipe } from '../index';
-import { CollapsibleWellComponent } from '../../common/index';
+import {
+    //UpvoteComponent,
+    DurationPipe
+} from '../index';
+//import { CollapsibleWellComponent } from '../../common/index';
 
 describe('SessionListComponent', () => {
     let fixture: ComponentFixture<SessionListComponent>,
@@ -27,15 +30,15 @@ describe('SessionListComponent', () => {
             imports: [],
             declarations: [
                 SessionListComponent,
-                UpvoteComponent,
+                //UpvoteComponent,
                 DurationPipe,
-                CollapsibleWellComponent
+                //CollapsibleWellComponent
             ],
             providers: [
                 { provide: AuthService, useValue: mockAuthService },
                 { provide: VoterService, useValue: mockVoterService }
             ],
-            schemas: []
+            schemas: [NO_ERRORS_SCHEMA]
         }).compileComponents(); // *method not needed if using webpack
     }));
 

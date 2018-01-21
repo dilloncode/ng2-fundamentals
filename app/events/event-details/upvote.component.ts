@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
     selector: 'upvote',
@@ -15,7 +15,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
             </div>
         </div>
     </div>
-    `
+    `,
 })
 export class UpvoteComponent {
     @Input() count: number;

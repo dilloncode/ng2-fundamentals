@@ -1,5 +1,5 @@
-import { Component, Input } from "@angular/core";
-import { IEvent } from "./index";
+import { Component, Input } from '@angular/core';
+import { IEvent } from './index';
 
 @Component({
     selector: 'event-thumbnail',
@@ -8,7 +8,7 @@ import { IEvent } from "./index";
         [routerLink]="['/events', event.id]">
         <h2>{{event?.name | uppercase}}</h2>
         <div>Date: {{event?.date | date:'shortDate'}}</div>
-        <div [ngClass]="getStartTimeClass()" 
+        <div [ngClass]="getStartTimeClass()"
             [ngSwitch]="event?.time">
             Time: {{event?.time}}
             <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
@@ -31,14 +31,15 @@ import { IEvent } from "./index";
         .thumbnail { min-height: 210px; }
         .pad-left { margin-left: 10px; }
         .well div { color: #bbb; }
-    `]
+    `],
 })
 export class EventThumbnailComponent {
-    @Input() event: IEvent
+    @Input() event: IEvent;
 
     getStartTimeClass() {
-        if (this.event && this.event.time === '8:00 am')
-            return ['green', 'bold']
-        return []
+        if (this.event && this.event.time === '8:00 am') {
+            return ['green', 'bold'];
+        }
+        return [];
     }
 }

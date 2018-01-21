@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { IUser } from './user.model';
 @Injectable()
 export class AuthService {
-    private currentUser: IUser;
+    public currentUser: IUser;
 
     constructor(private http: Http) { }
 
